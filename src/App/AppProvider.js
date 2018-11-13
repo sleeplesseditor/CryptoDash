@@ -13,7 +13,7 @@ export class AppProvider extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            page: 'dashboard',
+            page: 'Dashboard',
             favorites: ['BTC', 'ETH', 'XMR', 'DOGE'],
             ...this.savedSettings(),
             setPage: this.setPage,
@@ -106,7 +106,7 @@ export class AppProvider extends React.Component {
         let currentFavorite = this.state.favorites[0];
         this.setState({
             firstVisit: false,
-            page: 'dashboard',
+            page: 'Dashboard',
             currentFavorite,
             prices: null,
             historical: null 
@@ -135,7 +135,7 @@ export class AppProvider extends React.Component {
     savedSettings(){
         let cryptoDashData = JSON.parse(localStorage.getItem('cryptoDash'));
         if(!cryptoDashData){
-            return {page: 'settings', firstVisit: true }
+            return {page: 'Settings', firstVisit: true }
         }
         let {favorites, currentFavorite} = cryptoDashData;
         return {favorites, currentFavorite};
